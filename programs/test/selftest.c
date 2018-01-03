@@ -41,6 +41,7 @@
 #include "mbedtls/sha256.h"
 #include "mbedtls/sha512.h"
 #include "mbedtls/arc4.h"
+#include "mbedtls/chacha8.h"
 #include "mbedtls/des.h"
 #include "mbedtls/aes.h"
 #include "mbedtls/camellia.h"
@@ -53,6 +54,7 @@
 #include "mbedtls/ecp.h"
 #include "mbedtls/ecjpake.h"
 #include "mbedtls/timing.h"
+#include "mbedtls/salsa20.h"
 
 #include <string.h>
 
@@ -192,6 +194,14 @@ const selftest_t selftests[] =
 #if defined(MBEDTLS_ARC4_C)
     {"arc4", mbedtls_arc4_self_test},
 #endif
+#if defined(MBEDTLS_SALSA20_C)
+    {"salsa20", mbedtls_salsa20_self_test},
+#endif
+
+#if defined(MBEDTLS_CHACHA8_C)
+    {"chacha8", mbedtls_chacha8_self_test},
+#endif
+
 #if defined(MBEDTLS_DES_C)
     {"des", mbedtls_des_self_test},
 #endif
