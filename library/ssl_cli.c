@@ -2406,7 +2406,8 @@ static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
           MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED */
 
 #if defined(MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA_ENABLED)
-    if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA )
+    if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_
+       _ECDSA )
     {
         if(mbedtls_newhope_parse_public_value_from_server(&ssl->handshake->newhope_ctx, &p, end) != 0 )
         {
@@ -3031,8 +3032,8 @@ static int ssl_write_client_key_exchange( mbedtls_ssl_context *ssl )
     else
 #endif /* MBEDTLS_KEY_EXCHANGE_RSA_ENABLED */
 
-#if defined(MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA_ENABLED)
-    if( ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA)
+#if defined(MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED)
+    if( ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA)
     {
         /*
          * Newhope key exchange -- send client public value
@@ -3041,10 +3042,10 @@ static int ssl_write_client_key_exchange( mbedtls_ssl_context *ssl )
 
         /* Create and write the public value - relies on the server key-exchange message */
         /* Generate b-vector and seed */
-        if( ( ret = mbedtls_newhope_make_params_client( &ssl->handshake->newhope_ctx, &n,
+        if( ( ret = mbedtls_lizard_make_params_client( &ssl->handshake->lizard_ctx, &n,
                                                         &ssl->out_msg[i], MBEDTLS_SSL_MAX_CONTENT_LEN - i ) ) != 0 )
         {
-            MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_newhope_make_params", ret );
+            MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_lizard_make_params", ret );
             return( ret );
         }
 
