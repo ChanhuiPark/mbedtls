@@ -2967,14 +2967,14 @@ static int ssl_write_server_key_exchange( mbedtls_ssl_context *ssl )
     }
 #endif /* MBEDTLS_KEY_EXCHANGE__SOME__DHE_ENABLED */
 
-#if defined(MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA_ENABLED)
-    if( MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA == ciphersuite_info->key_exchange)
+#if defined(MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED)
+    if( MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA == ciphersuite_info->key_exchange)
     {
         /* Generate b-vector and seed */
-        if( ( ret = mbedtls_newhope_make_params_server( &ssl->handshake->newhope_ctx, &len,
+        if( ( ret = mbedtls_lizard_make_params_server( &ssl->handshake->lizard_ctx, &len,
                                               &p, MBEDTLS_SSL_MAX_CONTENT_LEN - n ) ) != 0 )
         {
-            MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_newhope_make_params", ret );
+            MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_lizard_make_params", ret );
             return( ret );
         }
 
