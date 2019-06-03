@@ -2408,7 +2408,8 @@ static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
 #if defined(MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED)
     if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA )
     {
-        if(mbedtls_lizard_parse_public_value_from_server(&ssl->handshake->lizard_ctx, &p, end) != 0 )
+        if(mbedtls_lizard_parse_public_value_from_server(
+                            &ssl->handshake->lizard_ctx, &p, end) != 0 )
         {
             MBEDTLS_SSL_DEBUG_MSG( 1, ( "bad server key exchange message" ) );
             return( MBEDTLS_ERR_SSL_BAD_HS_SERVER_KEY_EXCHANGE );
