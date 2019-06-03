@@ -2406,8 +2406,7 @@ static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
           MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED */
 
 #if defined(MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED)
-    if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_
-       _ECDSA )
+    if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA )
     {
         if(mbedtls_lizard_parse_public_value_from_server(&ssl->handshake->lizard_ctx, &p, end) != 0 )
         {
