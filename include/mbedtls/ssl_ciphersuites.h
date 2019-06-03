@@ -229,20 +229,12 @@ extern "C" {
 #define MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8      0xC0AE  /**< TLS 1.2 */
 #define MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8      0xC0AF  /**< TLS 1.2 */
 
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_RC4_128_SHA               0xC0B0  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_128_CBC_SHA           0xC0B1  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_256_CBC_SHA           0xC0B2  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_128_CBC_SHA256        0xC0B3  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_128_GCM_SHA256        0xC0B4  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_256_CBC_SHA384        0xC0B5  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_AES_256_GCM_SHA384        0xC0B6  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_CAMELLIA_128_CBC_SHA256   0xC0B7  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_CAMELLIA_256_CBC_SHA384   0xC0B8  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_CAMELLIA_128_GCM_SHA256   0xC0B9  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_CAMELLIA_256_GCM_SHA384   0xC0BA  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_3DES_EDE_CBC_SHA          0xC0BB  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_SALSA20_256_SHA           0xC0BC  /**< Experimental */
-#define MBEDTLS_TLS_NEWHOPE_ECDSA_WITH_CHACHA8_256_SHA           0xC0BD  /**< Experimental */
+#define MBEDTLS_TLS_LIZARD_ECDSA_WITH_RC4_128_SHA               0xC0B0  /**< Experimental */
+#define MBEDTLS_TLS_LIZARD_ECDSA_WITH_AES_128_CBC_SHA           0xC0B1  /**< Experimental */
+#define MBEDTLS_TLS_LIZARD_ECDSA_WITH_AES_256_CBC_SHA           0xC0B2  /**< Experimental */
+#define MBEDTLS_TLS_LIZARD_ECDSA_WITH_AES_128_CBC_SHA256        0xC0B3  /**< Experimental */
+#define MBEDTLS_TLS_LIZARD_ECDSA_WITH_AES_128_GCM_SHA256        0xC0B4  /**< Experimental */
+
 
 
 #define MBEDTLS_TLS_ECJPAKE_WITH_AES_128_CCM_8          0xC0FF  /**< experimental */
