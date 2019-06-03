@@ -2405,21 +2405,18 @@ static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
           MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED ||
           MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED */
 
-#if defined(MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA_ENABLED)
+#if defined(MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED)
     if(ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_
        _ECDSA )
     {
-        if(mbedtls_newhope_parse_public_value_from_server(&ssl->handshake->newhope_ctx, &p, end) != 0 )
+        if(mbedtls_lizard_parse_public_value_from_server(&ssl->handshake->lizard_ctx, &p, end) != 0 )
         {
             MBEDTLS_SSL_DEBUG_MSG( 1, ( "bad server key exchange message" ) );
             return( MBEDTLS_ERR_SSL_BAD_HS_SERVER_KEY_EXCHANGE );
         }
-
-
-
     }
     else
-#endif /* MBEDTLS_KEY_EXCHANGE_NEWHOPE_ECDSA_ENABLED */
+#endif /* MBEDTLS_KEY_EXCHANGE_LIZARD_ECDSA_ENABLED */
 
 #if defined(MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED)
     if( ciphersuite_info->key_exchange == MBEDTLS_KEY_EXCHANGE_ECJPAKE )
